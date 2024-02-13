@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Valentine's Proposal for Atheer</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Love font */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide overflowing elements */
+            background-color: #e99bb3; /* Cute color background */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(231, 196, 213, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        h1, p {
+            text-align: center;
+            color: #ff6b6b; /* Love color */
+        }
+        .heart-frame {
+            width: 350px; /* Larger heart frame */
+            height: 350px; /* Larger heart frame */
+            border-radius: 50%;
+            background-color: #ff6b6b; /* Heart color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        .heart-frame:before,
+        .heart-frame:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 320px; /* Adjusted size */
+            height: 480px; /* Adjusted size */
+            background: #ff6b6b;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        .heart-frame:before {
+            left: -160px; /* Adjusted position */
+        }
+        .heart-frame:after {
+            right: -160px; /* Adjusted position */
+        }
+        .heart-frame img {
+            max-width: 100%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #ff6b6b;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-family: 'Courier New', Courier, monospace; /* Nicer love font */
+        }
+        button:hover {
+            background-color: #ff4f4f;
+        }
+        button.no {
+            animation: moveAway 1s ease-in-out forwards;
+        }
+        @keyframes moveAway {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-500px);
+            }
+        }
+        .moving-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+            animation: moveBackground 60s linear infinite; /* Adjust duration as needed */
+            z-index: 0;
+        }
+        @keyframes moveBackground {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="moving-bg"></div>
+    <div class="container">
+        <h1>To My Beautiful Princess Atheer</h1>
+        <div class="heart-frame">
+            <img src="https://i.imgur.com/PRc5Oti.png" alt="Atheer">
+        </div>
+        <p>My dearest Wifey,</p>
+        <p>To my beautiful wife,
+
+            As I sit down to pen these words, my heart fills with an unexplainable happiness, knowing that I am about to express the depths of my love for you. On this day dedicated to love, I find myself filled with a lot of emotions, all of which are centered around you, my beautiful princess.
+From the moment our paths crossed, my life has been forever changed, illuminated by the shining light of your presence. With each passing day, you bring joy, laughter, and endless love into my world, painting it with the beautiful colors of happiness.
+Atheer, you are my confidante, and my greatest source of strength. Your unconditional support and endless belief in me have lifted me to heights I never thought possible. Together, we stand strong and celebrate thsi day, hand in hand, united in our love.
+In your eyes, I see the reflection of my dreams and my future. With you by my side. Your love is a light of hope that guides me through life, filling my heart with courage and happiness.
+I ask you this, not just today, but for all the days to come? Will you walk this journey of love with me, hand in hand, heart in heart, as we create our own story together?.</p>
+        <p>So my love? Will you make me the happiest person alive by being my Valentine?</p>
+        <div class="button-container">
+            <button onclick="alert('Yay! I Love Youuuuuuuu Soooooo Much')">Yes</button>
+            <button class="no" onclick="moveRandom()">No</button>
+        </div>
+    </div>
+    <script>
+        function moveRandom() {
+            var noButton = document.querySelector('.no');
+            var newX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            var newY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = newX + 'px';
+            noButton.style.top = newY + 'px';
+        }
+    </script>
+</body>
+</html>
